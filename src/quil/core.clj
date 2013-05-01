@@ -1,9 +1,9 @@
 (ns
     ^{:doc "Wrappers and extensions around the core Processing.org API."
       :author "Roland Sadowski, Sam Aaron"}
-    quil.core
-    (:import [processing.core PApplet PImage PGraphics PFont PConstants PShape]
-             [java.awt.event KeyEvent])
+  quil.core
+  (:import [processing.core PApplet PImage PGraphics PFont PConstants PShape]
+           [java.awt.event KeyEvent])
   (:require [clojure.set])
   (:use [quil.version :only [QUIL-VERSION-STR]]
         [quil.util :only [int-like? resolve-constant-key length-of-longest-key gen-padding print-definition-list]]
@@ -86,10 +86,10 @@
   "Calculates the absolute value (magnitude) of a number. The
   absolute value of a number is always positive. Dynamically casts to
   an int or float appropriately"
-    [n]
-    (if (int-like? n)
-      (abs-int n)
-      (abs-float n)))
+  [n]
+  (if (int-like? n)
+    (abs-int n)
+    (abs-float n)))
 
 (defn
   ^{:requires-bindings false
@@ -430,13 +430,13 @@
   (.endRecord (current-applet)))
 
 (def ^{:private true}
-     shape-modes {:points PApplet/POINTS
-                  :lines PApplet/LINES
-                  :triangles PApplet/TRIANGLES
-                  :triangle-strip PApplet/TRIANGLE_STRIP
-                  :triangle-fan PApplet/TRIANGLE_FAN
-                  :quads PApplet/QUADS
-                  :quad-strip PApplet/QUAD_STRIP})
+  shape-modes {:points PApplet/POINTS
+               :lines PApplet/LINES
+               :triangles PApplet/TRIANGLES
+               :triangle-strip PApplet/TRIANGLE_STRIP
+               :triangle-fan PApplet/TRIANGLE_FAN
+               :quads PApplet/QUADS
+               :quad-strip PApplet/QUAD_STRIP})
 
 (defn
   ^{:requires-bindings true
@@ -583,7 +583,7 @@
     :category "Data"
     :subcategory "Conversion"
     :added "1.0"}
-    unbinary
+  unbinary
   "Unpack a binary string to an integer. See binary for converting
   integers to strings."
   [str-val]
@@ -1132,7 +1132,7 @@
     :category "Environment"
     :subcategory nil
     :added "1.0"}
-    cursor-image
+  cursor-image
   "Set the cursor to a predefined image. The horizontal and vertical
   active spots of the cursor may be specified with hx and hy"
   ([^PImage img] (.cursor (current-applet) img))
@@ -1209,7 +1209,7 @@
 
 (defn
   ^{:requires-bindings true
-   :processing-name "curveTightness()"
+    :processing-name "curveTightness()"
     :category "Shape"
     :subcategory "Curves"
     :added "1.0"}
@@ -1320,7 +1320,7 @@
   "Calculates the distance between two points"
   ([x1 y1 x2 y2] (PApplet/dist (float x1) (float y1) (float x2) (float y2)))
   ([x1 y1 z1 x2 y2 z2] (PApplet/dist (float x1) (float y1) (float z1)
-                               (float x2) (float y2) (float z2))))
+                                     (float x2) (float y2) (float z2))))
 
 (defn
   ^{:requires-bindings true
@@ -1336,10 +1336,10 @@
   (.ellipse (current-surface) (float x) (float y) (float width) (float height)))
 
 (def ^{:private true}
-     ellipse-modes   {:center PApplet/CENTER
-                      :radius PApplet/RADIUS
-                      :corner PApplet/CORNER
-                      :corners PApplet/CORNERS})
+  ellipse-modes   {:center PApplet/CENTER
+                   :radius PApplet/RADIUS
+                   :corner PApplet/CORNER
+                   :corners PApplet/CORNERS})
 
 (defn
   ^{:requires-bindings true
@@ -1441,7 +1441,7 @@
     :category "Structure"
     :subcategory nil
     :added "1.0"}
-    exit
+  exit
   "Quits/stops/exits the program.  Rather than terminating
   immediately, exit will cause the sketch to exit after draw has
   completed (or after setup completes if called during the setup
@@ -1714,18 +1714,12 @@
   (.getHeight (current-applet)))
 
 (def ^{:private true}
-  hint-options {:enable-opengl-4x-smooth PConstants/ENABLE_OPENGL_4X_SMOOTH
-                :enable-opengl-2x-smooth PConstants/ENABLE_OPENGL_2X_SMOOTH
-                :enable-native-fonts PConstants/ENABLE_NATIVE_FONTS
+  hint-options {:enable-native-fonts PConstants/ENABLE_NATIVE_FONTS
                 :disable-native-fonts PConstants/DISABLE_NATIVE_FONTS
                 :enable-depth-test PConstants/ENABLE_DEPTH_TEST
                 :disable-depth-test PConstants/DISABLE_DEPTH_TEST
                 :enable-depth-sort PConstants/ENABLE_DEPTH_SORT
                 :disable-depth-sort PConstants/DISABLE_DEPTH_SORT
-                :disable-opengl-error-report PConstants/DISABLE_OPENGL_ERROR_REPORT
-                :enable-opengl-error-report PConstants/ENABLE_OPENGL_ERROR_REPORT
-                :enable-accurate-textures PConstants/ENABLE_ACCURATE_TEXTURES
-                :disable-accurate-textures PConstants/DISABLE_ACCURATE_TEXTURES
                 :disable-depth-mask PConstants/DISABLE_DEPTH_MASK
                 :enable-depth-mask PConstants/ENABLE_DEPTH_MASK})
 
@@ -1851,7 +1845,7 @@
   images."
   ([^PImage img x y] (.image (current-surface) img (float x) (float y)))
   ([^PImage img x y c d] (.image (current-surface) img (float x) (float y)
-                                  (float c) (float d)))
+                                 (float c) (float d)))
   ([^PImage img x y c d u1 v1 u2 v2]
      (.image (current-surface) img (float x) (float y) (float c) (float d)
              (float u1) (float v1) (float u2) (float v2))))
@@ -1993,7 +1987,7 @@
     :category "Input"
     :subcategory "Keyboard"
     :added "1.0"}
-    key-pressed?
+  key-pressed?
   "true if any key is currently pressed, false otherwise."
   []
   (.-keyPressed (current-applet)))
@@ -2195,7 +2189,7 @@
     :category "Structure"
     :subcategory nil
     :added "1.0"}
-    start-loop
+  start-loop
   "Causes Processing to continuously execute the code within
   draw. If no-loop is called, the code in draw stops executing."
   []
@@ -2420,9 +2414,9 @@
     :subcategory "Setting"
     :added "1.0"}
   no-fill
- "Disables filling geometry. If both no-stroke and no-fill are called,
+  "Disables filling geometry. If both no-stroke and no-fill are called,
   nothing will be drawn to the screen."  []
- (.noFill (current-surface)))
+  (.noFill (current-surface)))
 
 (defn
   ^{:requires-bindings true
@@ -3894,10 +3888,10 @@
 
 (def ^{:private true}
   texture-modes {:image PApplet/IMAGE
-                 :normalized PApplet/NORMALIZED})
+                 :normalized PApplet/NORMAL})
 
 (defn
-    ^{:requires-bindings true
+  ^{:requires-bindings true
     :processing-name "textureMode()"
     :category "Shape"
     :subcategory "Vertex"
@@ -4435,8 +4429,8 @@
                      Default is true.
 
    :on-close       - Called once, when sketch is closed"
-    [& opts]
-    (apply applet opts))
+  [& opts]
+  (apply applet opts))
 
 (defmacro defsketch
   "Define and start a sketch and bind it to a var with the symbol
