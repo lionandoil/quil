@@ -1,4 +1,4 @@
-(defproject com.vijaykiran/quil "2.0.0-SNAPSHOT"
+(defproject com.vijaykiran/quil "2.0.0-alpha1"
   :description "(mix Processing Clojure)"
   :url "http://github.com/vijaykiran/quil"
   :license {:name "Common Public License - v 1.0"
