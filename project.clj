@@ -1,16 +1,12 @@
-(defproject quil "1.6.0"
+(defproject com.vijaykiran/quil "2.0.0-SNAPSHOT"
   :description "(mix Processing Clojure)"
-  :url "http://github.com/quil/quil"
-  :mailing-list {:name "Quil Mailing List"
-                 :archive "https://groups.google.com/forum/?fromgroups#!forum/clj-processing"
-                 :post "clj-processing@googlegroups.com"}
+  :url "http://github.com/vijaykiran/quil"
   :license {:name "Common Public License - v 1.0"
             :url "http://www.opensource.org/licenses/cpl1.0"}
-  :dependencies [[org.clojure/clojure "1.4.0"]
-                 [org.clojars.processing-core/org.processing.core "1.5.1"]
-                 [org.clojars.processing-core/org.processing.gluegen-rt "1.5.1"]
-                 [org.clojars.processing-core/org.processing.jogl "1.5.1"]
-                 [org.clojars.processing-core/org.processing.opengl "1.5.1"]
-                 [org.clojars.processing-core/org.processing.itext "1.5.1"]
-                 [org.clojars.processing-core/org.processing.pdf "1.5.1"]]
+  :dependencies [[org.clojure/clojure "1.5.1"]
+                 [com.vijaykiran.processing/org.processing.core "2.0b8"]
+                 [com.vijaykiran.processing/org.processing.gluegen-rt "2.0b8"]
+                 [com.vijaykiran.processing/org.processing.jogl-all "2.0b8"]
+                 [com.vijaykiran.processing/org.processing.itext "2.0b8"]
+                 [com.vijaykiran.processing/org.processing.pdf "2.0b8"]]
   :aot [quil.applet])
